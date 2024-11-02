@@ -12,6 +12,8 @@ pipeline {
         }
         stage('Build Docker Image'){
             steps{
+                sh "echo 'Printing Docker version' "
+                sh "docker --version"
                 sh "cd springbootdocker_jenkins/target && docker build -t springboot-learning:latest"
             }
         }
